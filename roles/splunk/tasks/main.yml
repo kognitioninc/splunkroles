@@ -136,8 +136,8 @@
   when:
     - splunkd_found.stat.exists
     - configure_boot_start == True
-    - not deployment_task == "configure_splunk_boot.yml"
-
+    - deployment_task != "configure_splunk_boot.yml"
+#not deployment_task != "configure....
 - name: Send Slack messages
   include_tasks: slack_messenger.yml
   tags: always
