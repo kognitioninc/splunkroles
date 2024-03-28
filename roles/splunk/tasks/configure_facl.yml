@@ -33,16 +33,16 @@
       register: result_auditd_conf
       become: true
 
-    - name: Allow splunk to read /var/log/audit.log
-      ini_file:
-        path: /etc/audit/auditd.conf
-        section: null
-        option: log_group
-        value: "{{ splunk_nix_group }}"
-      become: true
-      notify:
-        - restart redhat auditd service
-        - restart non-redhat auditd service
-      when: result_auditd_conf.stat.exists
+#    - name: Allow splunk to read /var/log/audit.log
+#      ini_file:
+#       path: /etc/audit/auditd.conf
+#        section: null
+#        option: log_group
+#        value: "{{ splunk_nix_group }}"
+#      become: true
+#      notify:
+#       - restart redhat auditd service
+#        - restart non-redhat auditd service
+#      when: result_auditd_conf.stat.exists
 
   when: not least_privileged
