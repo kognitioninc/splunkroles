@@ -1,8 +1,8 @@
 ---
 # defaults file for splunk role
 # Anything that is undefined here should be configured. I recommend setting the values in your group_vars under an all.yml file.
-#slack_channel: undefined
-#slack_token: undefined
+slack_channel: undefined
+slack_token: undefined
 splunk_home: auto_determined # This gets set by main.yml but we have to define it here or Ansible will complain that it is undefined
 splunk_package_url: auto_determined # This gets set by main.yml but we have to define it here or Ansible will complain that it is undefined
 splunk_package_path: ~/
